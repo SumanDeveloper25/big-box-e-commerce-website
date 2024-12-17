@@ -1,0 +1,98 @@
+[
+    {
+        "productName": "Samsung TV",
+        "retailerName": "Best Buy",
+        "price": "$799",
+        "specifications": "55-inch, 4K UHD, Smart TV",
+        "rating": 4.5,
+        "image": "./assets/images/products/samsungTv.jpg"
+    },
+    {
+        "productName": "iPhone 14",
+        "retailerName": "Apple Store",
+        "price": "$999",
+        "specifications": "128GB, A15 Bionic Chip, 12MP Camera",
+        "rating": 4.8,
+        "image": "./assets/images/products/iphone.webp"
+    },
+    {
+        "productName": "Dell XPS 13",
+        "retailerName": "Amazon",
+        "price": "$1199",
+        "specifications": "Intel i7, 16GB RAM, 512GB SSD",
+        "rating": 4.7,
+        "image": "./assets/images/products/DellXPS13.png"
+    },
+    {
+        "productName": "Sony Headphones",
+        "retailerName": "Walmart",
+        "price": "$199",
+        "specifications": "Noise Cancelling, Wireless, 30hr Battery",
+        "rating": 4.3,
+        "image": "./assets/images/products/sonnyHeadphone.png"
+    },
+    {
+        "productName": "Apple MacBook Air",
+        "retailerName": "Apple Store",
+        "price": "$1099",
+        "specifications": "M1 Chip, 8GB RAM, 256GB SSD",
+        "rating": 4.9,
+        "image": "./assets/images/products/macbook-air.jpg"
+    },
+    {
+        "productName": "Canon EOS R5",
+        "retailerName": "B&H Photo",
+        "price": "$3899",
+        "specifications": "45MP, 8K Video, 20fps Burst",
+        "rating": 4.6,
+        "image": "./assets/images/products/canon-r5.jpg"
+    },
+    {
+        "productName": "Nike Air Max",
+        "retailerName": "Nike Store",
+        "price": "$129",
+        "specifications": "Comfortable, Breathable, Durable",
+        "rating": 4.4,
+        "image": "./assets/images/products/nike-airmax.jpg"
+    },
+    {
+        "productName": "Logitech MX Master 3",
+        "retailerName": "Amazon",
+        "price": "$99",
+        "specifications": "Wireless, Ergonomic, Customizable Buttons",
+        "rating": 4.7,
+        "image": "./assets/images/products/logitech-mx3.jpg"
+    },
+    {
+        "productName": "KitchenAid Mixer",
+        "retailerName": "Target",
+        "price": "$349",
+        "specifications": "5-Qt, 10 Speeds, Tilt-Head Design",
+        "rating": 4.8,
+        "image": "./assets/images/products/kitchenaid-mixer.jpg"
+    },
+    {
+        "productName": "Fitbit Versa 3",
+        "retailerName": "Fitbit Store",
+        "price": "$229",
+        "specifications": "Heart Rate, GPS, 6+ Days Battery",
+        "rating": 4.5,
+        "image": "./assets/images/products/fitbit-versa3.jpg"
+    },
+    {
+        "productName": "Bose SoundLink",
+        "retailerName": "Best Buy",
+        "price": "$149",
+        "specifications": "Portable Bluetooth Speaker, 12hr Battery",
+        "rating": 4.6,
+        "image": "./assets/images/products/bose-soundlink.jpg"
+    },
+    {
+        "productName": "Samsung Galaxy Watch 4",
+        "retailerName": "Samsung Store",
+        "price": "$299",
+        "specifications": "Fitness Tracking, ECG, Sleep Monitoring",
+        "rating": 4.7,
+        "image": "./assets/images/products/samsung-watch4.jpg"
+    }
+]

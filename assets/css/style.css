@@ -1,0 +1,204 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto Flex';
+    src: url('../fonts/RobotoFlex-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    /* background-color: #fff; */
+    margin: 0;
+    padding: 0;
+}
+
+/* Align icons to the right on mobile and desktop */
+.navbar-icons {
+    display: flex;
+    gap: 15px;
+}
+.navbar .navbar-nav {
+    margin-left: 70px;
+}
+
+/* Desktop User and Cart Icons (Centered in Desktop) */
+.navbar-icons.d-none.d-lg-flex {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10px;
+}
+
+/* Mobile User and Cart Icons (Right side of the brand logo) */
+.navbar-icons.d-lg-none {
+    display: flex;
+    gap: 15px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.search-container {
+    flex: 1;
+    max-width: 40%;
+}
+
+@media (max-width: 992px) {
+    /* Position the toggler button on the left */
+
+    .navbar-nav {
+        width: 100%;
+        padding-left: 3%;
+        margin-top: 15px;
+    }
+
+    .navbar .navbar-nav {
+        margin-left: 0px;
+    }
+
+    .navbar-collapse {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Center the logo in mobile view */
+    .navbar-brand {
+        position: relative;
+        right: 30%;
+    }
+
+    /* Adjust navbar content in mobile */
+    .navbar-collapse.show {
+        display: block;
+
+    }
+
+    .navbar .navbar-icons {
+        display: none;
+    }
+
+    .search-container {
+        margin-top: 10px;
+        flex: 1;
+        max-width: 90%;
+    }
+}
+
+.slider-container {
+    height: 100vh;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+}
+
+.slider-container i {
+    font-size: 34px;
+    z-index: 100;
+}
+
+.slider-container .button-container {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    width: 100%;
+}
+
+.slider-container .slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: 1s;
+}
+
+.category-products {
+    background: whitesmoke;
+    width: 90vw;
+    height: 160px;
+    border-radius: 20px;
+    display: flex;
+    padding-top: 30px;
+    justify-content: space-around;
+    align-items: start;
+    position: absolute;
+    margin-top: 90vh;
+    margin-inline-start: 5%;
+    display: none;
+}
+
+.category-products div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.category-products .category {
+    height: 50px;
+}
+
+.category-products h4 {
+    font-size: medium;
+}
