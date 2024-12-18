@@ -1,0 +1,38 @@
+[
+    {
+        "brandName": "Apple",
+        "logo": "./assets/images/brand/apple.svg"
+    },
+    {
+        "brandName": "Samsung",
+        "logo": "/assets/images/brand/samsung.svg"
+    },
+    {
+        "brandName": "Xiaomi",
+        "logo": "/assets/images/brand/xiaomi.svg"
+    },
+    {
+        "brandName": "Oppo",
+        "logo": "/assets/images/brand/oppo.svg"
+    },
+    {
+        "brandName": "Vivo",
+        "logo": "/assets/images/brand/vivo.svg"
+    },
+    {
+        "brandName": "OnePlus",
+        "logo": "/assets/images/brand/oneplus.svg"
+    },
+    {
+        "brandName": "Google",
+        "logo": "/assets/images/brand/google.svg"
+    },
+    {
+        "brandName": "Realme",
+        "logo": "/assets/images/brand/realme.svg"
+    },
+    {
+        "brandName": "Iqoo",
+        "logo": "/assets/images/brand/iqoo.svg"
+    }
+]

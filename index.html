@@ -59,7 +59,6 @@
         </div>
     </nav>
 
-    <!-- Mobile User and Cart Icons (visible on mobile, right side of the brand logo) -->
     <div class="navbar-icons d-lg-none px-3 mt-3">
         <a href="#"><i class="bi bi-person-circle fs-5 text-black mx-1"></i></a>
         <a href="#"><i class="bi bi-cart-dash-fill fs-5 text-black"></i></a>
@@ -67,7 +66,7 @@
 
 
     <main>
-        <section class="slider-container">
+        <section class="slider-container position-relative overflow-hidden">
             <div class="button-container">
                 <i class="bi bi-arrow-left-circle prev" onclick="goPrev()"></i>
                 <i class="bi bi-arrow-right-circle next" onclick="goNext()"></i>
@@ -77,48 +76,56 @@
             <img class="slide" src="./assets/images/slider_iamges/mi.jpg" alt="" srcset="">
             <img class="slide" src="./assets/images/slider_iamges/samsungTv.jpg" alt="" srcset="">
             <img class="slide" src="./assets/images/slider_iamges/vivox200.jpg" alt="" srcset="">
-
-
-            <section class="category-products">
-                <div>
-                    <img class="category" src="./assets/images/grocery.png" alt="" srcset="">
-                    <h4>Grocery</h4>
-                </div>
-                <div>
-                    <img class="category" src="./assets/images/electronics.png" alt="" srcset="">
-                    <h4>Electronics</h4>
-                </div>
-                <div>
-                    <img class="category" src="./assets/images/phone.png" alt="" srcset="">
-                    <h4>Mobiles</h4>
-                </div>
-                <div>
-                    <img class="category" src="./assets/images/appliance.png" alt="" srcset="">
-                    <h4>Appliences</h4>
-                </div>
-                <div>
-                    <img class="category" src="./assets/images/toys.png" alt="" srcset="">
-                    <h4>Toys</h4>
-                </div>
-                <div>
-                    <img class="category" src="./assets/images/make-up.png" alt="" srcset="">
-                    <h4>Beauty &<br>Product</h4>
-                </div>
-
-            </section>
-
         </section>
 
-        <section id="product-container" class="row g-4 mx-4">
-
+        <section class="category-products">
+            <div>
+                <img class="category" src="./assets/images/category/groceery.png" alt="" srcset="">
+                <h4>Grocery</h4>
+            </div>
+            <div>
+                <img class="category" src="./assets/images/category/electronics&Acce.png" alt="" srcset="">
+                <h4>Electronics</h4>
+            </div>
+            <div>
+                <img class="category" src="./assets/images/mobiles.webp" alt="" srcset="">
+                <h4>Mobiles</h4>
+            </div>
+            <div>
+                <img class="category" src="./assets/images/category/kitchen&app.png" alt="" srcset="">
+                <h4>Appliences</h4>
+            </div>
+            <div>
+                <img class="category" src="./assets/images/category/acces&more.png" alt="" srcset="">
+                <h4>Accessories & More</h4>
+            </div>
+            <div>
+                <img class="category" src="./assets/images/category/toys&stationary.png" alt="" srcset="">
+                <h4>Toys</h4>
+            </div>
+            <div>
+                <img class="category" src="./assets/images/category/beauty_wellness.png" alt="" srcset="">
+                <h4>Beauty &<br>Product</h4>
+            </div>
+            <div>
+                <img class="category" src="./assets/images/category/sport_health.png" alt="" srcset="">
+                <h4>Sports &<br>Health</h4>
+            </div>
         </section>
 
+
+        <section id="deals-product-container" class="row g-3 mx-2">
+            <h3 class="mx-3 fs-4 text-top-deals">Top deales</h3>
+        </section>
+
+        <section id="top-smartphone-brand" class="row g-3 mx-2">
+            <h3 class="mx-3 fs-4 text-top-smartphone-brand">Top smartphone brands</h3>
+        </section>
+
+        <section id="best-electronics-container" class="row g-3 mx-2">
+            <h3 class="mx-3 fs-4 text-best-electronics">Best of electronics</h3>
+        </section>
     </main>
-
-    <script>
-        
-
-    </script>
 
     <script src="./assets/js/main.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

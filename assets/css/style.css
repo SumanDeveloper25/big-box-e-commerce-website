@@ -74,6 +74,7 @@ body {
     display: flex;
     gap: 15px;
 }
+
 .navbar .navbar-nav {
     margin-left: 70px;
 }
@@ -100,7 +101,7 @@ body {
     max-width: 40%;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 720px) {
     /* Position the toggler button on the left */
 
     .navbar-nav {
@@ -123,13 +124,12 @@ body {
     /* Center the logo in mobile view */
     .navbar-brand {
         position: relative;
-        right: 30%;
+        right: 25%;
     }
 
     /* Adjust navbar content in mobile */
     .navbar-collapse.show {
         display: block;
-
     }
 
     .navbar .navbar-icons {
@@ -141,16 +141,39 @@ body {
         flex: 1;
         max-width: 90%;
     }
+
+    .slider-container {
+        height: 50vh;
+        /* width: 100%; */
+        object-fit: contain;
+    }
+    .slider-container .slide {
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        transition: 1s;
+    }
+
+    .category-products {
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+        align-items: center;
+    }
+
+    .category-products div {
+        margin-top: 10px;
+    }
 }
 
 .slider-container {
     height: 100vh;
-    margin: auto;
-    position: relative;
-    overflow: hidden;
+    width: 100%;
     z-index: 1;
     display: flex;
     align-items: center;
+    object-fit: contain;
 }
 
 .slider-container i {
@@ -175,30 +198,87 @@ body {
 
 .category-products {
     background: whitesmoke;
-    width: 90vw;
-    height: 160px;
     border-radius: 20px;
     display: flex;
-    padding-top: 30px;
     justify-content: space-around;
-    align-items: start;
-    position: absolute;
-    margin-top: 90vh;
-    margin-inline-start: 5%;
-    display: none;
+    align-items: center;
+    margin-top: 20px;
+    padding-inline: 30px;
 }
 
 .category-products div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    gap: 2px;
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
 }
 
+
 .category-products .category {
-    height: 50px;
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
 }
 
 .category-products h4 {
-    font-size: medium;
+    font-size: small;
+    line-height: normal;
+    text-align: center;
+}
+
+
+/* Product card container styling */
+#deals-product-container {
+    margin-top: 30px;
+}
+
+/* Card styling adjustments */
+.card {
+    transition: transform 0.2s ease-in-out;
+    border-radius: 12px;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    /* Slight hover effect */
+}
+
+.card-img-top {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+@media (max-width: 576px) {
+    .card-body {
+        padding: 0.8rem;
+    }
+}
+
+.text-top-deals {
+    margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+.text-top-smartphone-brand{
+    margin-top: 60px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+.text-best-electronics {
+    margin-top: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+.brand-logo {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    transition: transform 0.3s ease;
+}
+
+.brand-logo:hover {
+    transform: scale(1.1);
 }

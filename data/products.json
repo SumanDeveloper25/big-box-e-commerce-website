@@ -1,6 +1,7 @@
 [
     {
         "productName": "Samsung TV",
+        "category": "electronics",
         "retailerName": "Best Buy",
         "price": "$799",
         "specifications": "55-inch, 4K UHD, Smart TV",
@@ -9,6 +10,7 @@
     },
     {
         "productName": "iPhone 14",
+        "category": "mobile",
         "retailerName": "Apple Store",
         "price": "$999",
         "specifications": "128GB, A15 Bionic Chip, 12MP Camera",
@@ -17,6 +19,7 @@
     },
     {
         "productName": "Dell XPS 13",
+        "category": "laptop",
         "retailerName": "Amazon",
         "price": "$1199",
         "specifications": "Intel i7, 16GB RAM, 512GB SSD",
@@ -25,6 +28,7 @@
     },
     {
         "productName": "Sony Headphones",
+        "category": "headphone",
         "retailerName": "Walmart",
         "price": "$199",
         "specifications": "Noise Cancelling, Wireless, 30hr Battery",
@@ -33,38 +37,43 @@
     },
     {
         "productName": "Apple MacBook Air",
+        "category": "laptop",
         "retailerName": "Apple Store",
         "price": "$1099",
         "specifications": "M1 Chip, 8GB RAM, 256GB SSD",
         "rating": 4.9,
-        "image": "./assets/images/products/macbook-air.jpg"
+        "image": "./assets/images/products/Apple MacBook Air.png"
     },
     {
         "productName": "Canon EOS R5",
+        "category": "camera",
         "retailerName": "B&H Photo",
         "price": "$3899",
         "specifications": "45MP, 8K Video, 20fps Burst",
         "rating": 4.6,
-        "image": "./assets/images/products/canon-r5.jpg"
+        "image": "./assets/images/products/canon-eos-r5.png"
     },
     {
         "productName": "Nike Air Max",
+        "category": "footwear",
         "retailerName": "Nike Store",
         "price": "$129",
         "specifications": "Comfortable, Breathable, Durable",
-        "rating": 4.4,
+        "rating": 3,
         "image": "./assets/images/products/nike-airmax.jpg"
     },
     {
         "productName": "Logitech MX Master 3",
+        "category": "mouse",
         "retailerName": "Amazon",
         "price": "$99",
         "specifications": "Wireless, Ergonomic, Customizable Buttons",
-        "rating": 4.7,
-        "image": "./assets/images/products/logitech-mx3.jpg"
+        "rating": 4,
+        "image": "./assets/images/products/logitech-mx3.png"
     },
     {
         "productName": "KitchenAid Mixer",
+        "category": "Home & Furniture",
         "retailerName": "Target",
         "price": "$349",
         "specifications": "5-Qt, 10 Speeds, Tilt-Head Design",
@@ -73,6 +82,7 @@
     },
     {
         "productName": "Fitbit Versa 3",
+        "category": "smart watch",
         "retailerName": "Fitbit Store",
         "price": "$229",
         "specifications": "Heart Rate, GPS, 6+ Days Battery",
@@ -81,6 +91,7 @@
     },
     {
         "productName": "Bose SoundLink",
+        "category": "sound",
         "retailerName": "Best Buy",
         "price": "$149",
         "specifications": "Portable Bluetooth Speaker, 12hr Battery",
@@ -89,10 +100,110 @@
     },
     {
         "productName": "Samsung Galaxy Watch 4",
+        "category": "smart watch",
         "retailerName": "Samsung Store",
         "price": "$299",
         "specifications": "Fitness Tracking, ECG, Sleep Monitoring",
         "rating": 4.7,
         "image": "./assets/images/products/samsung-watch4.jpg"
+    },
+    {
+        "productName": "Noise Colorfit icon",
+        "category": "smart watch",
+        "retailerName": "Noice Store",
+        "price": "$30",
+        "specifications": "2 1.8'' Display with Bluetooth Calling, AI Voice Assistant Smartwatch  (Black Strap, Regular)",
+        "rating": 4.7,
+        "image": "./assets/images/products/NoiseColorfit.png"
+    },
+    {
+        "productName": "Apple MacBook Air",
+        "category": "Electronics",
+        "retailerName": "Apple Store",
+        "price": "$1099",
+        "specifications": "M1 Chip, 8GB RAM, 256GB SSD",
+        "rating": 4.9,
+        "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp-spacegray-select-202206_GEO_EMEA?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1664497359481"
+    },
+    {
+        "productName": "Canon EOS R5",
+        "category": "Electronics",
+        "retailerName": "B&H Photo",
+        "price": "$3899",
+        "specifications": "45MP, 8K Video, 20fps Burst",
+        "rating": 4.6,
+        "image": "https://cdn.mos.cms.futurecdn.net/wAJeZSMCkWJY9CMcWhVhNh.jpg"
+    },
+    {
+        "productName": "Organic Honey",
+        "category": "Grocery",
+        "retailerName": "Whole Foods",
+        "price": "$15",
+        "specifications": "Pure, Raw, Organic",
+        "rating": 4.8,
+        "image": "https://cdn.shopify.com/s/files/1/0146/5907/0080/products/bearhoney-purebeehoney.jpg"
+    },
+    {
+        "productName": "Samsung Galaxy S23",
+        "category": "Mobiles",
+        "retailerName": "Samsung Store",
+        "price": "$999",
+        "specifications": "128GB Storage, 8GB RAM, 5G Enabled",
+        "rating": 4.7,
+        "image": "https://m.media-amazon.com/images/I/71r69Y7BSeL._SL1500_.jpg"
+    },
+    {
+        "productName": "Philips Air Fryer",
+        "category": "Appliances",
+        "retailerName": "Philips Store",
+        "price": "$249",
+        "specifications": "Digital Touch Display, Low Oil Cooking",
+        "rating": 4.5,
+        "image": "https://m.media-amazon.com/images/I/71f7ErU5PrL._SL1500_.jpg"
+    },
+    {
+        "productName": "Ray-Ban Aviator Sunglasses",
+        "category": "Accessories",
+        "retailerName": "Ray-Ban Store",
+        "price": "$159",
+        "specifications": "Polarized, UV Protection",
+        "rating": 4.7,
+        "image": "https://cdn.shopify.com/s/files/1/1084/1676/products/RB3025_Aviator_Light_Ray_sunglasses.jpg"
+    },
+    {
+        "productName": "Lego Star Wars Set",
+        "category": "Toys",
+        "retailerName": "LEGO Store",
+        "price": "$89",
+        "specifications": "Includes Mini Figures, Interactive Build",
+        "rating": 4.9,
+        "image": "https://www.lego.com/cdn/cs/catalog/assets/bltb62459582fa9b370/75345.jpg"
+    },
+    {
+        "productName": "Maybelline Mascara",
+        "category": "Beauty Products",
+        "retailerName": "Maybelline Store",
+        "price": "$9.99",
+        "specifications": "Waterproof, Volume Boosting",
+        "rating": 4.6,
+        "image": "https://target.scene7.com/is/image/Target/GUEST_e646302f-5dc4-4c3b-bafa-9b7fa3ea7e37"
+    },
+    {
+        "productName": "Adidas Ultraboost Running Shoes",
+        "category": "Sports & Health",
+        "retailerName": "Adidas Store",
+        "price": "$180",
+        "specifications": "Breathable, Lightweight, Durable",
+        "rating": 3,
+        "image": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/574e2a4b34d4471da1a5a84e00f23cb4_9366/Ultraboost_Light_Shoes_White_HQ6351_01_standard.jpg"
+    },
+    {
+        "productName": "Sony WH-1000XM5",
+        "category": "Electronics",
+        "retailerName": "Sony Store",
+        "price": "$399",
+        "specifications": "Noise Cancelling, Wireless, 30hr Battery",
+        "rating": 4.9,
+        "image": "https://m.media-amazon.com/images/I/61D4Z3yKPAL._AC_SL1500_.jpg"
     }
 ]
