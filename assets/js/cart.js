@@ -98,23 +98,21 @@ function getCookies() {
     }, {});
 }
 
-// Utility function to set a cookie
 function setCookie(name, value, days = 7) {
     const date = new Date();
     date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
     document.cookie = `${name}=${encodeURIComponent(value)}; expires=${date.toUTCString()}; path=/`;
 }
 
-// Function to fetch the price of a product by name (replace this with actual API call)
 async function fetchPrice(productName) {
     try {
         const response = await fetch(`/getProductPrice?name=${encodeURIComponent(productName)}`);
         if (!response.ok) throw new Error('Failed to fetch price');
         const data = await response.json();
-        return parseFloat(data.price); // Assuming API returns { price: <number> }
+        return parseFloat(data.price);
     } catch (error) {
         console.error('Error fetching price:', error);
-        return 0; // Fallback price in case of error
+        return 0;
     }
 }
 
@@ -200,7 +198,7 @@ async function renderCart() {
             const index = e.target.dataset.index;
             const newQuantity = Number(e.target.value);
 
-            if (newQuantity < 1) return; // Prevent invalid quantity
+            if (newQuantity < 1) return; 
 
             // Update cart quantity
             consolidatedCart[index].quantity = newQuantity;
@@ -225,7 +223,6 @@ async function renderCart() {
         });
     });
 
-    // Attach event listeners for delete buttons
     document.querySelectorAll('.delete-btn').forEach(button => {
         button.addEventListener('click', (e) => {
             const index = e.target.dataset.index;
@@ -251,5 +248,4 @@ async function renderCart() {
     });
 }
 
-// Initialize the cart rendering
 renderCart();

@@ -1,7 +1,5 @@
-// Retrieve product from localStorage
 const product = JSON.parse(localStorage.getItem('selectedProduct'));
 
-// Utility function to get cookies as an object
 function getCookies() {
     return document.cookie.split(";").reduce((cookies, cookie) => {
         const [name, value] = cookie.split("=").map(c => c.trim());
@@ -10,7 +8,6 @@ function getCookies() {
     }, {});
 }
 
-// Utility function to set a cookie
 function setCookie(name, value, days = 7) {
     const date = new Date();
     date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
@@ -25,14 +22,12 @@ function addToCart(product, quantity) {
     const productIndex = cart.findIndex(item => item.productName === product.productName);
 
     if (productIndex > -1) {
-        // Update quantity if product already exists
         cart[productIndex].quantity += Number(quantity);
     } else {
-        // Add new product with name, image, price, and quantity
         const productWithDetails = {
             productName: product.productName,
             image: product.image,
-            price: parseFloat(product.price), // Ensure price is saved as a number
+            price: parseFloat(product.price),
             quantity: Number(quantity)
         };
         cart.push(productWithDetails);
@@ -44,9 +39,7 @@ function addToCart(product, quantity) {
     alert("Product added to cart!");
 }
 
-// Buy Now functionality (directly proceeds to checkout)
 function buyNow(product, quantity) {
-    // Add product with details and quantity to localStorage for checkout
     const productWithDetails = {
         productName: product.productName,
         image: product.image,

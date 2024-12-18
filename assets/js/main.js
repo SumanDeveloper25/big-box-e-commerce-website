@@ -88,12 +88,10 @@ const initializeProducts = async () => {
     const data = await fetchData('data/products.json');
     if (!data) return;
 
-    // Deals Section
     const dealsContainer = 'deals-product-container';
     const selectedProducts = selectTopProducts(data, 2);
     renderProductCards(dealsContainer, selectedProducts);
 
-    // Electronics Section
     const electronicsContainer = 'best-electronics-container';
     const electronicsProducts = data.filter(product => product.category.toLowerCase() === 'electronics');
     renderProductCards(electronicsContainer, electronicsProducts);
@@ -116,7 +114,6 @@ const selectTopProducts = (products, perCategory) => {
     return selectedProducts;
 };
 
-// Initialize Brand Section
 const initializeBrands = async () => {
     const data = await fetchData('data/brand.json');
     if (!data) return;
@@ -139,15 +136,11 @@ const initializeBrands = async () => {
     container.innerHTML = row;
 };
 
-// Add to Cart
 const addToCart = (product) => {
-    // Store product in localStorage
     localStorage.setItem('selectedProduct', JSON.stringify(product));
-    // Redirect to the product details page
     window.location.href = 'product-details.html';
 };
 
-// Attach Add to Cart Event Listener
 document.addEventListener('click', (event) => {
     if (event.target.matches('.btn-add-to-cart')) {
         const product = {
@@ -162,6 +155,5 @@ document.addEventListener('click', (event) => {
     }
 });
 
-// Initialize All Sections
 initializeProducts();
 initializeBrands();
