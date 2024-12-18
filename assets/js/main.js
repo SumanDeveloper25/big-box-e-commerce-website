@@ -1,229 +1,167 @@
+// Carousel Functionality
 const slides = document.querySelectorAll('.slide');
-
 let slideCounter = 0;
 
-// Position each slide side by side
+// Position slides side by side
 slides.forEach((slide, index) => {
     slide.style.left = `${index * 100}%`;
 });
 
-// Function to go to the next slide
+// Navigate to the next slide
 const goNext = () => {
-    if (slideCounter < slides.length - 1) {
-        slideCounter++;
-    } else {
-        slideCounter = 0; // Reset to the first slide
-    }
-    slideImage();
+    slideCounter = (slideCounter + 1) % slides.length;
+    updateSlidePosition();
 };
 
-// Function to go to the previous slide
+// Navigate to the previous slide
 const goPrev = () => {
-    if (slideCounter > 0) {
-        slideCounter--;
-    } else {
-        slideCounter = slides.length - 1; // Go to the last slide
-    }
-    slideImage();
+    slideCounter = (slideCounter - 1 + slides.length) % slides.length;
+    updateSlidePosition();
 };
 
-// Function to move slides using translateX
-const slideImage = () => {
+// Update slide positions
+const updateSlidePosition = () => {
     slides.forEach(slide => {
         slide.style.transform = `translateX(-${slideCounter * 100}%)`;
     });
 };
 
-// Automatically slide images every 2 seconds
+// Automatically slide every 3.5 seconds
 setInterval(goNext, 3500);
 
+// Fetch Utility Function
+const fetchData = async (url) => {
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`Failed to fetch data from ${url}`);
+        }
+        return await response.json();
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
+};
 
-fetch('data/products.json')
-    .then(response => response.json())
-    .then(data => {
-        const container = document.getElementById('deals-product-container');
+// Render Product Cards
+const renderProductCards = (containerId, products, limit = 10) => {
+    const container = document.getElementById(containerId);
+    container.innerHTML = ''; // Clear existing content
+    const limitedProducts = products.slice(0, limit);
 
-        // Group products by category
-        const productsByCategory = data.reduce((acc, product) => {
-            if (!acc[product.category]) {
-                acc[product.category] = [];
-            }
-            acc[product.category].push(product);
-            return acc;
-        }, {});
-
-        // Prepare an array to hold the selected top products
-        const selectedProducts = [];
-
-        // Iterate over each category and pick up to 2 products with the lowest price
-        Object.entries(productsByCategory).forEach(([category, products]) => {
-            // Sort products in the category by price (convert price string to number)
-            const sortedProducts = products.sort((a, b) => {
-                const priceA = parseFloat(a.price.replace('$', ''));
-                const priceB = parseFloat(b.price.replace('$', ''));
-                return priceA - priceB;
-            });
-
-            // Take up to 2 products and add them to the selected products array
-            selectedProducts.push(...sortedProducts.slice(0, 2));
-        });
-
-        // Limit the total products to 10
-        const finalProducts = selectedProducts.slice(0, 10);
-
-        // Generate cards for the final products
-        finalProducts.forEach(product => {
-            const card = `
-    <div class="col-6 col-lg-3 mb-3">
-        <div class="card shadow-sm rounded-3 border-0 h-100">
-            <img src="${product.image}" 
-                 class="card-img-top mx-auto mt-3" 
-                 style="width: 120px; height: 120px; object-fit: contain;" 
-                 alt="${product.productName}">
-            <div class="card-body text-center p-2 d-flex flex-column">
-                <h6 class="card-title text-truncate">${product.productName}</h6>
-                <p class="card-text mb-1 text-muted small">${product.retailerName}</p>
-                <p class="card-text fw-bold text-success">${product.price}</p>
-                <p class="card-text small mb-2">${product.specifications}</p>
-                <div class="mt-auto">
-                    <span class="text-warning">${'⭐'.repeat(Math.round(product.rating))}</span>
-                </div>
-                <button class="btn btn-sm mt-2" style="background-color: #8D5122; color: #fff;">Add to Cart</button>
-            </div>
-        </div>
-    </div>
-            `;
-            container.innerHTML += card;
-        });
-    })
-    .catch(error => console.error('Error fetching product data:', error));
-    
-    fetch('data/products.json')
-    .then(response => response.json())
-    .then(data => {
-        const container = document.getElementById('best-electronics-container');
-
-        // Group products by category
-        const productsByCategory = data.reduce((acc, product) => {
-            if (!acc[product.category]) {
-                acc[product.category] = [];
-            }
-            acc[product.category].push(product);
-            return acc;
-        }, {});
-
-        // Prepare an array to hold the selected top products
-        const selectedProducts = [];
-
-        // Iterate over each category and pick up to 2 products with the lowest price
-        Object.entries(productsByCategory).forEach(([category, products]) => {
-            // Sort products in the category by price (convert price string to number)
-            const sortedProducts = products.sort((a, b) => {
-                const priceA = parseFloat(a.price.replace('$', ''));
-                const priceB = parseFloat(b.price.replace('$', ''));
-                return priceA - priceB;
-            });
-
-            // Take up to 2 products and add them to the selected products array
-            selectedProducts.push(...sortedProducts.slice(0, 2));
-        });
-
-        // Limit the total products to 10
-        const finalProducts = selectedProducts.slice(0, 10);
-
-        // Generate cards for the final products
-        finalProducts.forEach(product => {
-            const card = `
-    <div class="col-6 col-lg-3 mb-3">
-        <div class="card shadow-sm rounded-3 border-0 h-100">
-            <img src="${product.image}" 
-                 class="card-img-top mx-auto mt-3" 
-                 style="width: 120px; height: 120px; object-fit: contain;" 
-                 alt="${product.productName}">
-            <div class="card-body text-center p-2 d-flex flex-column">
-                <h6 class="card-title text-truncate">${product.productName}</h6>
-                <p class="card-text mb-1 text-muted small">${product.retailerName}</p>
-                <p class="card-text fw-bold text-success">${product.price}</p>
-                <p class="card-text small mb-2">${product.specifications}</p>
-                <div class="mt-auto">
-                    <span class="text-warning">${'⭐'.repeat(Math.round(product.rating))}</span>
-                </div>
-                <button class="btn btn-sm mt-2" style="background-color: #8D5122; color: #fff;">Add to Cart</button>
-            </div>
-        </div>
-    </div>
-            `;
-            container.innerHTML += card;
-        });
-    })
-    .catch(error => console.error('Error fetching product data:', error));    
-
-// fetch the best electronics product
-fetch('data/products.json')
-    .then(response => response.json())
-    .then(data => {
-        const container = document.getElementById('best-electronics-container');
-
-        // Filter products by category: "Electronics"
-        const electronicsProducts = data.filter(product => product.category.toLowerCase() === 'electronics');
-
-        // Limit the total electronics products to 10
-        const finalProducts = electronicsProducts.slice(0, 10);
-
-        // Generate cards for the final products
-        finalProducts.forEach(product => {
-            const card = `
-    <div class="col-6 col-lg-3 mb-3">
-        <div class="card shadow-sm rounded-3 border-0 h-100">
-            <img src="${product.image}" 
-                 class="card-img-top mx-auto mt-3" 
-                 style="width: 120px; height: 120px; object-fit: contain;" 
-                 alt="${product.productName}">
-            <div class="card-body text-center p-2 d-flex flex-column">
-                <h6 class="card-title text-truncate">${product.productName}</h6>
-                <p class="card-text mb-1 text-muted small">${product.retailerName}</p>
-                <p class="card-text fw-bold text-success">${product.price}</p>
-                <p class="card-text small mb-2">${product.specifications}</p>
-                <div class="mt-auto">
-                    <span class="text-warning">${'⭐'.repeat(Math.round(product.rating))}</span>
-                </div>
-                <button class="btn btn-sm mt-2" style="background-color: #8D5122; color: #fff;">Add to Cart</button>
-            </div>
-        </div>
-    </div>
-            `;
-            container.innerHTML += card;
-        });
-    })
-    .catch(error => console.error('Error fetching product data:', error));
-
-// fetched the brand smartphone brand logo
-fetch('data/brand.json')
-    .then(response => response.json())
-    .then(data => {
-        const container = document.getElementById('top-smartphone-brand');
-
-        // Limit to 8 brands for display
-        const topBrands = data.slice(0, 10);
-
-        // Generate a row layout for the brands
-        const row = `
-            <div class="d-flex flex-wrap justify-content-center gap-5">
-                ${topBrands.map(brand => `
-                    <div class="text-center">
-                        <div class="brand-logo mx-auto rounded-circle" 
-                             style="width: 70px; height: 70px; overflow: hidden; background-color: #f9f9f9;">
-                            <img src="${brand.logo}" 
-                                 class="img-fluid" 
-                                 style="width: 80%; height: 80%; object-fit: contain;" 
-                                 alt="${brand.brandName}">
+    limitedProducts.forEach(product => {
+        const card = `
+            <div class="col-6 col-lg-3 mb-3">
+                <div class="card shadow-sm rounded-3 border-0 h-100">
+                    <img src="${product.image}" 
+                         class="card-img-top mx-auto mt-3" 
+                         style="width: 120px; height: 120px; object-fit: contain;" 
+                         alt="${product.productName}">
+                    <div class="card-body text-center p-2 d-flex flex-column">
+                        <h6 class="card-title text-truncate">${product.productName}</h6>
+                        <p class="card-text mb-1 text-muted small">${product.retailerName}</p>
+                        <p class="card-text fw-bold text-success">${product.price}</p>
+                        <p class="card-text small mb-2">${product.specifications}</p>
+                        <div class="mt-auto">
+                            <span class="text-warning">${'⭐'.repeat(Math.round(product.rating))}</span>
                         </div>
-                        <h6 class="mt-2">${brand.brandName}</h6>
+                        <button 
+                            class="btn btn-sm mt-2 btn-add-to-cart" 
+                            style="background-color: #8D5122; color: #fff;"
+                            data-image="${product.image}"
+                            data-name="${product.productName}"
+                            data-retailer="${product.retailerName}"
+                            data-price="${product.price}"
+                            data-specifications="${product.specifications}"
+                            data-rating="${product.rating}">
+                            Add to Cart
+                        </button>
                     </div>
-                `).join('')}
-            </div>
-        `;
+                </div>
+            </div>`;
+        container.innerHTML += card;
+    });
+};
 
-        container.innerHTML = row;
-    })
-    .catch(error => console.error('Error fetching brand data:', error));
+// Initialize Product Sections
+const initializeProducts = async () => {
+    const data = await fetchData('data/products.json');
+    if (!data) return;
+
+    // Deals Section
+    const dealsContainer = 'deals-product-container';
+    const selectedProducts = selectTopProducts(data, 2);
+    renderProductCards(dealsContainer, selectedProducts);
+
+    // Electronics Section
+    const electronicsContainer = 'best-electronics-container';
+    const electronicsProducts = data.filter(product => product.category.toLowerCase() === 'electronics');
+    renderProductCards(electronicsContainer, electronicsProducts);
+};
+
+// Select Top Products by Category
+const selectTopProducts = (products, perCategory) => {
+    const productsByCategory = products.reduce((acc, product) => {
+        if (!acc[product.category]) acc[product.category] = [];
+        acc[product.category].push(product);
+        return acc;
+    }, {});
+
+    const selectedProducts = [];
+    Object.values(productsByCategory).forEach(products => {
+        const sortedProducts = products.sort((a, b) => parseFloat(a.price.replace('$', '')) - parseFloat(b.price.replace('$', '')));
+        selectedProducts.push(...sortedProducts.slice(0, perCategory));
+    });
+
+    return selectedProducts;
+};
+
+// Initialize Brand Section
+const initializeBrands = async () => {
+    const data = await fetchData('data/brand.json');
+    if (!data) return;
+
+    const container = document.getElementById('top-smartphone-brand');
+    const topBrands = data.slice(0, 10);
+
+    const row = `
+        <div class="d-flex flex-wrap justify-content-center align-items-center gap-4 text-center">
+            ${topBrands.map(brand => `
+                <div class="brand-container">
+                    <div class="brand-logo mx-auto rounded-circle">
+                        <img src="${brand.logo}" 
+                             class="img-fluid" 
+                             alt="${brand.brandName}">
+                    </div>
+                    <h6 class="mt-2">${brand.brandName}</h6>
+                </div>`).join('')}
+        </div>`;
+    container.innerHTML = row;
+};
+
+// Add to Cart
+const addToCart = (product) => {
+    // Store product in localStorage
+    localStorage.setItem('selectedProduct', JSON.stringify(product));
+    // Redirect to the product details page
+    window.location.href = 'product-details.html';
+};
+
+// Attach Add to Cart Event Listener
+document.addEventListener('click', (event) => {
+    if (event.target.matches('.btn-add-to-cart')) {
+        const product = {
+            image: event.target.dataset.image,
+            productName: event.target.dataset.name,
+            retailerName: event.target.dataset.retailer,
+            price: event.target.dataset.price,
+            specifications: event.target.dataset.specifications,
+            rating: event.target.dataset.rating,
+        };
+        addToCart(product);
+    }
+});
+
+// Initialize All Sections
+initializeProducts();
+initializeBrands();

@@ -140,18 +140,29 @@ body {
         margin-top: 10px;
         flex: 1;
         max-width: 90%;
+        position: relative;
     }
 
     .slider-container {
-        height: 50vh;
-        /* width: 100%; */
-        object-fit: contain;
+        height: 20vh;
     }
+
+    /* Adjust navigation button size for mobile */
+    .slider-container i {
+        font-size: 24px;
+        /* Smaller button size for mobile */
+    }
+
     .slider-container .slide {
-        width: 10px;
-        height: 10px;
-        position: absolute;
-        transition: 1s;
+        height: 100%;
+        object-fit: contain;
+        /* Ensure image doesn't overflow or crop */
+        top: 0;
+    }
+
+    .button-container {
+        padding: 8px;
+        /* Adjust button container padding for mobile */
     }
 
     .category-products {
@@ -165,35 +176,49 @@ body {
     .category-products div {
         margin-top: 10px;
     }
+    .footer h5{
+        text-align: center;
+    }
+    .footer .small{
+        text-align: justify;
+        padding-inline: 10px;
+    }
+    .footer .small{
+        text-align: justify;
+        padding-inline: 10px;
+    }
 }
 
 .slider-container {
-    height: 100vh;
+    position: relative;
     width: 100%;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    object-fit: contain;
-}
-
-.slider-container i {
-    font-size: 34px;
-    z-index: 100;
+    height: 40vw;
+    overflow: hidden;
 }
 
 .slider-container .button-container {
     position: absolute;
+    top: 50%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     padding: 12px;
-    width: 100%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.slider-container i {
+    font-size: 34px;
+    color: white;
 }
 
 .slider-container .slide {
     width: 100%;
-    height: 100%;
+    height: auto;
     position: absolute;
-    transition: 1s;
+    transition: transform 1s ease-in-out;
+    object-fit: cover;
+    /* Ensures the image covers the container */
 }
 
 .category-products {
@@ -232,7 +257,7 @@ body {
 
 /* Product card container styling */
 #deals-product-container {
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 /* Card styling adjustments */
@@ -259,26 +284,66 @@ body {
 }
 
 .text-top-deals {
+    margin-top: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+#top-smartphone-brand{
     margin-top: 20px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
 }
-.text-top-smartphone-brand{
-    margin-top: 60px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-}
+
 .text-best-electronics {
     margin-top: 50px;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
 }
-.brand-logo {
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
-    transition: transform 0.3s ease;
+
+.text-top-smartphone-brand{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
 }
 
+/* Styling for the brand logo container */
+.brand-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-inline-start: 20px;
+}
+
+.brand-logo {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.brand-logo img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+}
+
+/* Hover effect for brand logos */
 .brand-logo:hover {
     transform: scale(1.1);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
 }
+
+/* Text styling for brand name */
+.brand-container h6 {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+}
+
